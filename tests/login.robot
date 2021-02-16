@@ -2,18 +2,19 @@
 Documentation   Testes da página de login
 Library     Browser
 
-Resource    resources/login_actions.robot
+Resource    ../resources/base.robot
 
 #tirar screenshot apos a execução de cada teste
 Test Teardown   Take Screenshot 
 
 ***Test Cases***
 Login com sucesso
+    [Tags]      smoke
     Open URL
 
     Login With       usuario@teste.com   senha321
-
-    Wait For Elements State     css=a[href$=sign_out]        visible     10
+    
+    Logout Link Should Be Visible
     
 Senha Incorreta
     Open URL
