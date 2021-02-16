@@ -12,16 +12,9 @@ Reproduzir Paródia
     Login With   usuario@teste.com  senha321
     Logout Link Should Be Visible
 
-    Click       css=a[href*=search]
-    Wait For Elements State     xpath=//h2[contains(text(),"Buscar")]   visible     10    
+    Going For Search Page
+    Going For Categorie
+    Open Album From             Marcus e Debug
+    Play Song                   Bug de Manhã
+    Song Shoul Be Playing       Bug de Manhã
 
-    Click       xpath=//img[contains(@src, "sertanejo.png")]/..
-    Wait For Elements State     xpath=//h2[contains(text(),"Sertanejo")]   visible     10    
-
-    Click       xpath=//p[contains(text(),"Marcus e Debug")]/..
-    Wait For Elements State     xpath=//h2[contains(text(),"Músicas")]   visible     10    
-    
-    Click       css=.play-button
-    #OU -> xpath=//h2[contains(text(),"Bug de Manhã")]/../..//div[contains(@class, "play")]//a
-    Wait For Elements State    xpath=//h2[contains(text(),"Bug de Manhã")]/../../..     visible     10  
-    

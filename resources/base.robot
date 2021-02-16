@@ -6,3 +6,4 @@ Library         Browser
 
 Resource        actions/login.robot
 Resource        actions/home_login.robot
+Resource        actions/player.robot
