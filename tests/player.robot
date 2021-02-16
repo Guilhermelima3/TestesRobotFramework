@@ -23,4 +23,5 @@ Reproduzir Paródia
     
     Click       css=.play-button
     #OU -> xpath=//h2[contains(text(),"Bug de Manhã")]/../..//div[contains(@class, "play")]//a
-    Get Style   xpath=xpath=//h2[contains(text(),"Bug de Manhã")]/../../..      color       equal      rgb(255, 0, 180)
+    Wait For Elements State    xpath=//h2[contains(text(),"Bug de Manhã")]/../../..     visible     10  
+    
