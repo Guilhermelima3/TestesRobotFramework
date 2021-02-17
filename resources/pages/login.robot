@@ -3,7 +3,10 @@ Documentation       Ações da página de Login
 
 ***Keywords***
 Open URL
-    Open Browser    http://parodify.herokuapp.com/users/sign_in    chromium
+    New Browser     chromium        false    #true roda em background
+    New Page        http://parodify.herokuapp.com/users/sign_in
+    
+    #Open Browser    http://parodify.herokuapp.com/users/sign_in    chromium
 
 Login With 
     [Arguments]     ${email_arg}  ${password_arg}
@@ -18,3 +21,4 @@ Alert Should Be
 
     Get Text        css=.is-danger .message-body    ==     Opps! Dados de acesso incorretos!
 
+#robot -d ./logs tests\

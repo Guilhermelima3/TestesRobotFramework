@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210216 17:50:30.461" rpa="false">
-<suite id="s1" name="Player" source="C:\RFW\ParodifyRFW\tests\player.robot">
-<test id="s1-t1" name="Reproduzir Paródia">
+<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210217 11:50:43.229" rpa="false">
+<suite id="s1" name="Tests" source="C:\RFW\ParodifyRFW\tests">
+<suite id="s1-s1" name="Login" source="C:\RFW\ParodifyRFW\tests\login.robot">
+<test id="s1-s1-t1" name="Login com sucesso">
 <kw name="Open URL" library="login">
-<kw name="Open Browser" library="Browser">
+<kw name="New Browser" library="Browser">
 <tags>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 </tags>
-<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
-Use `New Page` directly instead of `Open Browser` for production and automated execution.
+<doc>Create a new playwright Browser with specified options.
 See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
 <arguments>
-<arg>http://parodify.herokuapp.com/users/sign_in</arg>
 <arg>chromium</arg>
+<arg>false</arg>
 </arguments>
-<msg timestamp="20210216 17:50:31.809" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
-<msg timestamp="20210216 17:50:31.811" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
-<msg timestamp="20210216 17:50:32.237" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
-<msg timestamp="20210216 17:50:32.238" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
-<msg timestamp="20210216 17:50:32.258" level="INFO">Successfully created context with options: {"acceptDownloads":false,"ignoreHTTPSErrors":false,"bypassCSP":false,"deviceScaleFactor":1,"isMobile":false,"hasTouch":false,"javaScriptEnabled":true,"offline":false,"hideRfBrowser":false}</msg>
-<msg timestamp="20210216 17:50:36.764" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
-<status status="PASS" starttime="20210216 17:50:31.809" endtime="20210216 17:50:36.765"></status>
+<msg timestamp="20210217 11:50:44.066" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:50:44.493" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:50:44.066" endtime="20210217 11:50:44.494"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:31.808" endtime="20210216 17:50:36.766"></status>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:50:48.109" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:50:44.495" endtime="20210217 11:50:48.109"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:44.066" endtime="20210217 11:50:48.109"></status>
 </kw>
 <kw name="Login With" library="login">
 <arguments>
@@ -40,8 +50,8 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>css=input[name*=email]</arg>
 <arg>${email_arg}</arg>
 </arguments>
-<msg timestamp="20210216 17:50:36.768" level="INFO">Fills the text 'usuario@teste.com' in the given field.</msg>
-<status status="PASS" starttime="20210216 17:50:36.768" endtime="20210216 17:50:36.923"></status>
+<msg timestamp="20210217 11:50:48.111" level="INFO">Fills the text 'usuario@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:48.111" endtime="20210217 11:50:48.323"></status>
 </kw>
 <kw name="Fill Text" library="Browser">
 <tags>
@@ -53,8 +63,8 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>css=#user_password</arg>
 <arg>${password_arg}</arg>
 </arguments>
-<msg timestamp="20210216 17:50:36.924" level="INFO">Fills the text 'senha321' in the given field.</msg>
-<status status="PASS" starttime="20210216 17:50:36.924" endtime="20210216 17:50:36.976"></status>
+<msg timestamp="20210217 11:50:48.323" level="INFO">Fills the text 'senha321' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:48.323" endtime="20210217 11:50:48.340"></status>
 </kw>
 <kw name="Click" library="Browser">
 <tags>
@@ -65,9 +75,9 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arguments>
 <arg>css=input[type=submit]</arg>
 </arguments>
-<status status="PASS" starttime="20210216 17:50:36.976" endtime="20210216 17:50:37.704"></status>
+<status status="PASS" starttime="20210217 11:50:48.340" endtime="20210217 11:50:48.876"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:36.767" endtime="20210216 17:50:37.704"></status>
+<status status="PASS" starttime="20210217 11:50:48.110" endtime="20210217 11:50:48.876"></status>
 </kw>
 <kw name="Logout Link Should Be Visible" library="home_login">
 <kw name="Wait For Elements State" library="Browser">
@@ -77,16 +87,559 @@ See `Browser, Context and Page` for more information about Browser and related c
 </tags>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
 <arguments>
-<arg>css=a[href$=sign_out]</arg>
+<arg>${LOGOUT_LINK}</arg>
 <arg>visible</arg>
 <arg>10</arg>
 </arguments>
-<msg timestamp="20210216 17:50:38.098" level="INFO">Wait for Element with selector: css=a[href$=sign_out]</msg>
-<status status="PASS" starttime="20210216 17:50:37.708" endtime="20210216 17:50:38.100"></status>
+<msg timestamp="20210217 11:50:49.184" level="INFO">Wait for Element with selector: css=a[href$=sign_out]</msg>
+<status status="PASS" starttime="20210217 11:50:48.878" endtime="20210217 11:50:49.185"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:37.706" endtime="20210216 17:50:38.101"></status>
+<status status="PASS" starttime="20210217 11:50:48.877" endtime="20210217 11:50:49.186"></status>
 </kw>
-<kw name="Going For Search Page" library="player">
+<kw name="Take Screenshot" library="Browser" type="teardown">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210217 11:50:49.539" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-20.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:50:49.186" endtime="20210217 11:50:49.539"></status>
+</kw>
+<tags>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" starttime="20210217 11:50:44.061" endtime="20210217 11:50:49.539" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="Senha Incorreta">
+<kw name="Open URL" library="login">
+<kw name="New Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>chromium</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210217 11:50:49.603" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:50:49.802" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:50:49.602" endtime="20210217 11:50:49.803"></status>
+</kw>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:50:52.638" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:50:49.803" endtime="20210217 11:50:52.638"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:49.602" endtime="20210217 11:50:52.638"></status>
+</kw>
+<kw name="Login With" library="login">
+<arguments>
+<arg>usuario@teste.com</arg>
+<arg>abc431</arg>
+</arguments>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=input[name*=email]</arg>
+<arg>${email_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:50:52.640" level="INFO">Fills the text 'usuario@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:52.640" endtime="20210217 11:50:52.678"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=#user_password</arg>
+<arg>${password_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:50:52.678" level="INFO">Fills the text 'abc431' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:52.678" endtime="20210217 11:50:52.694"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>css=input[type=submit]</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:50:52.694" endtime="20210217 11:50:53.218"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:52.639" endtime="20210217 11:50:53.218"></status>
+</kw>
+<kw name="Alert Should Be" library="login">
+<arguments>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>css=.is-danger .message-body</arg>
+<arg>==</arg>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:50:53.219" endtime="20210217 11:50:53.670"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:53.218" endtime="20210217 11:50:53.670"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="teardown">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210217 11:50:54.150" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-21.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:50:53.671" endtime="20210217 11:50:54.150"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:49.598" endtime="20210217 11:50:54.151" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="Email não exite">
+<kw name="Open URL" library="login">
+<kw name="New Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>chromium</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210217 11:50:54.216" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:50:54.792" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:50:54.216" endtime="20210217 11:50:54.793"></status>
+</kw>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:50:57.837" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:50:54.793" endtime="20210217 11:50:57.837"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:54.216" endtime="20210217 11:50:57.837"></status>
+</kw>
+<kw name="Login With" library="login">
+<arguments>
+<arg>usuarionexiste@teste.com</arg>
+<arg>senha321</arg>
+</arguments>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=input[name*=email]</arg>
+<arg>${email_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:50:57.839" level="INFO">Fills the text 'usuarionexiste@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:57.838" endtime="20210217 11:50:57.876"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=#user_password</arg>
+<arg>${password_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:50:57.876" level="INFO">Fills the text 'senha321' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:50:57.876" endtime="20210217 11:50:57.892"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>css=input[type=submit]</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:50:57.892" endtime="20210217 11:50:58.299"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:57.838" endtime="20210217 11:50:58.299"></status>
+</kw>
+<kw name="Alert Should Be" library="login">
+<arguments>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>css=.is-danger .message-body</arg>
+<arg>==</arg>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:50:58.300" endtime="20210217 11:50:58.491"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:58.300" endtime="20210217 11:50:58.492"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="teardown">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210217 11:50:58.933" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-22.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:50:58.492" endtime="20210217 11:50:58.933"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:54.212" endtime="20210217 11:50:58.934" critical="yes"></status>
+</test>
+<test id="s1-s1-t4" name="Email não informado">
+<kw name="Open URL" library="login">
+<kw name="New Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>chromium</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210217 11:50:59.000" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:50:59.428" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:50:59.000" endtime="20210217 11:50:59.428"></status>
+</kw>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:51:02.308" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:50:59.429" endtime="20210217 11:51:02.308"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:58.999" endtime="20210217 11:51:02.309"></status>
+</kw>
+<kw name="Login With" library="login">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>abc321</arg>
+</arguments>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=input[name*=email]</arg>
+<arg>${email_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:02.310" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:02.310" endtime="20210217 11:51:02.391"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=#user_password</arg>
+<arg>${password_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:02.393" level="INFO">Fills the text 'abc321' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:02.393" endtime="20210217 11:51:02.615"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>css=input[type=submit]</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:51:02.615" endtime="20210217 11:51:02.979"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:02.309" endtime="20210217 11:51:02.979"></status>
+</kw>
+<kw name="Alert Should Be" library="login">
+<arguments>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>css=.is-danger .message-body</arg>
+<arg>==</arg>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:51:02.981" endtime="20210217 11:51:03.177"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:02.980" endtime="20210217 11:51:03.177"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="teardown">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210217 11:51:03.629" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-23.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:51:03.181" endtime="20210217 11:51:03.629"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:50:58.996" endtime="20210217 11:51:03.629" critical="yes"></status>
+</test>
+<test id="s1-s1-t5" name="Senha não informada">
+<kw name="Open URL" library="login">
+<kw name="New Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>chromium</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210217 11:51:03.692" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:51:04.128" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:51:03.691" endtime="20210217 11:51:04.129"></status>
+</kw>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:51:07.331" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:51:04.129" endtime="20210217 11:51:07.331"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:03.691" endtime="20210217 11:51:07.331"></status>
+</kw>
+<kw name="Login With" library="login">
+<arguments>
+<arg>usuario@teste.com</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=input[name*=email]</arg>
+<arg>${email_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:07.333" level="INFO">Fills the text 'usuario@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:07.332" endtime="20210217 11:51:07.369"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=#user_password</arg>
+<arg>${password_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:07.369" level="INFO">Fills the text '' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:07.369" endtime="20210217 11:51:07.384"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>css=input[type=submit]</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:51:07.384" endtime="20210217 11:51:07.617"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:07.332" endtime="20210217 11:51:07.617"></status>
+</kw>
+<kw name="Alert Should Be" library="login">
+<arguments>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>css=.is-danger .message-body</arg>
+<arg>==</arg>
+<arg>Opps! Dados de acesso incorretos!</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:51:07.618" endtime="20210217 11:51:07.817"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:07.618" endtime="20210217 11:51:07.817"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser" type="teardown">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20210217 11:51:08.240" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-24.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:51:07.818" endtime="20210217 11:51:08.240"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:03.687" endtime="20210217 11:51:08.241" critical="yes"></status>
+</test>
+<doc>Testes da página de login</doc>
+<status status="PASS" starttime="20210217 11:50:43.247" endtime="20210217 11:51:08.302"></status>
+</suite>
+<suite id="s1-s2" name="Player" source="C:\RFW\ParodifyRFW\tests\player.robot">
+<test id="s1-s2-t1" name="Reproduzir Paródia">
+<kw name="Open URL" library="login">
+<kw name="New Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Create a new playwright Browser with specified options.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>chromium</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210217 11:51:08.321" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20210217 11:51:08.902" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<status status="PASS" starttime="20210217 11:51:08.320" endtime="20210217 11:51:08.902"></status>
+</kw>
+<kw name="New Page" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Open a new Page. A Page is the Playwright equivalent to a tab.
+See `Browser, Context and Page` for more information about Page concept.
+Returns a stable identifier for the created page.</doc>
+<arguments>
+<arg>http://parodify.herokuapp.com/users/sign_in</arg>
+</arguments>
+<msg timestamp="20210217 11:51:12.060" level="INFO">Successfully initialized new page object and opened url: http://parodify.herokuapp.com/users/sign_in</msg>
+<status status="PASS" starttime="20210217 11:51:08.902" endtime="20210217 11:51:12.060"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:08.320" endtime="20210217 11:51:12.061"></status>
+</kw>
+<kw name="Login With" library="login">
+<arguments>
+<arg>usuario@teste.com</arg>
+<arg>senha321</arg>
+</arguments>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=input[name*=email]</arg>
+<arg>${email_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:12.062" level="INFO">Fills the text 'usuario@teste.com' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:12.062" endtime="20210217 11:51:12.594"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>css=#user_password</arg>
+<arg>${password_arg}</arg>
+</arguments>
+<msg timestamp="20210217 11:51:12.595" level="INFO">Fills the text 'senha321' in the given field.</msg>
+<status status="PASS" starttime="20210217 11:51:12.595" endtime="20210217 11:51:12.610"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>css=input[type=submit]</arg>
+</arguments>
+<status status="PASS" starttime="20210217 11:51:12.610" endtime="20210217 11:51:13.125"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:12.061" endtime="20210217 11:51:13.125"></status>
+</kw>
+<kw name="Logout Link Should Be Visible" library="home_login">
+<kw name="Wait For Elements State" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+</tags>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<arguments>
+<arg>${LOGOUT_LINK}</arg>
+<arg>visible</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210217 11:51:13.956" level="INFO">Wait for Element with selector: css=a[href$=sign_out]</msg>
+<status status="PASS" starttime="20210217 11:51:13.126" endtime="20210217 11:51:13.957"></status>
+</kw>
+<status status="PASS" starttime="20210217 11:51:13.126" endtime="20210217 11:51:13.957"></status>
+</kw>
+<kw name="Going For Search Page" library="home_login">
 <kw name="Click" library="Browser">
 <tags>
 <tag>PageContent</tag>
@@ -96,7 +649,7 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arguments>
 <arg>css=a[href*=search]</arg>
 </arguments>
-<status status="PASS" starttime="20210216 17:50:38.104" endtime="20210216 17:50:38.220"></status>
+<status status="PASS" starttime="20210217 11:51:13.958" endtime="20210217 11:51:14.019"></status>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <tags>
@@ -109,10 +662,10 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>visible</arg>
 <arg>10</arg>
 </arguments>
-<msg timestamp="20210216 17:50:38.452" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Buscar")]</msg>
-<status status="PASS" starttime="20210216 17:50:38.221" endtime="20210216 17:50:38.453"></status>
+<msg timestamp="20210217 11:51:14.500" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Buscar")]</msg>
+<status status="PASS" starttime="20210217 11:51:14.019" endtime="20210217 11:51:14.501"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:38.102" endtime="20210216 17:50:38.454"></status>
+<status status="PASS" starttime="20210217 11:51:13.957" endtime="20210217 11:51:14.501"></status>
 </kw>
 <kw name="Going For Categorie" library="player">
 <kw name="Click" library="Browser">
@@ -124,7 +677,7 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arguments>
 <arg>xpath=//img[contains(@src, "sertanejo.png")]/..</arg>
 </arguments>
-<status status="PASS" starttime="20210216 17:50:38.454" endtime="20210216 17:50:38.794"></status>
+<status status="PASS" starttime="20210217 11:51:14.502" endtime="20210217 11:51:14.781"></status>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <tags>
@@ -137,12 +690,12 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>visible</arg>
 <arg>10</arg>
 </arguments>
-<msg timestamp="20210216 17:50:39.128" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Sertanejo")]</msg>
-<status status="PASS" starttime="20210216 17:50:38.795" endtime="20210216 17:50:39.130"></status>
+<msg timestamp="20210217 11:51:15.141" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Sertanejo")]</msg>
+<status status="PASS" starttime="20210217 11:51:14.782" endtime="20210217 11:51:15.142"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:38.454" endtime="20210216 17:50:39.130"></status>
+<status status="PASS" starttime="20210217 11:51:14.502" endtime="20210217 11:51:15.142"></status>
 </kw>
-<kw name="Open Album From" library="player">
+<kw name="Open Album From" library="cat">
 <arguments>
 <arg>Marcus e Debug</arg>
 </arguments>
@@ -155,7 +708,7 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arguments>
 <arg>xpath=//p[contains(text(),"${artist_name}")]/..</arg>
 </arguments>
-<status status="PASS" starttime="20210216 17:50:39.134" endtime="20210216 17:50:39.261"></status>
+<status status="PASS" starttime="20210217 11:51:15.143" endtime="20210217 11:51:15.176"></status>
 </kw>
 <kw name="Wait For Elements State" library="Browser">
 <tags>
@@ -168,12 +721,12 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>visible</arg>
 <arg>10</arg>
 </arguments>
-<msg timestamp="20210216 17:50:39.542" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Músicas")]</msg>
-<status status="PASS" starttime="20210216 17:50:39.262" endtime="20210216 17:50:39.543"></status>
+<msg timestamp="20210217 11:51:15.459" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Músicas")]</msg>
+<status status="PASS" starttime="20210217 11:51:15.176" endtime="20210217 11:51:15.459"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:39.132" endtime="20210216 17:50:39.544"></status>
+<status status="PASS" starttime="20210217 11:51:15.142" endtime="20210217 11:51:15.460"></status>
 </kw>
-<kw name="Play Song" library="player">
+<kw name="Play Song" library="album">
 <arguments>
 <arg>Bug de Manhã</arg>
 </arguments>
@@ -186,11 +739,11 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arguments>
 <arg>xpath=//h2[contains(text(),"${song_name}")]/../..//div[contains(@class, "play")]//a</arg>
 </arguments>
-<status status="PASS" starttime="20210216 17:50:39.547" endtime="20210216 17:50:39.665"></status>
+<status status="PASS" starttime="20210217 11:51:15.461" endtime="20210217 11:51:15.510"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:39.545" endtime="20210216 17:50:39.666"></status>
+<status status="PASS" starttime="20210217 11:51:15.461" endtime="20210217 11:51:15.510"></status>
 </kw>
-<kw name="Song Shoul Be Playing" library="player">
+<kw name="Song Shoul Be Playing" library="album">
 <arguments>
 <arg>Bug de Manhã</arg>
 </arguments>
@@ -205,36 +758,40 @@ See `Browser, Context and Page` for more information about Browser and related c
 <arg>visible</arg>
 <arg>10</arg>
 </arguments>
-<msg timestamp="20210216 17:50:39.698" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Bug de Manhã")]/../../..</msg>
-<status status="PASS" starttime="20210216 17:50:39.669" endtime="20210216 17:50:39.700"></status>
+<msg timestamp="20210217 11:51:15.519" level="INFO">Wait for Element with selector: xpath=//h2[contains(text(),"Bug de Manhã")]/../../..</msg>
+<status status="PASS" starttime="20210217 11:51:15.511" endtime="20210217 11:51:15.519"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:39.668" endtime="20210216 17:50:39.700"></status>
+<status status="PASS" starttime="20210217 11:51:15.511" endtime="20210217 11:51:15.519"></status>
 </kw>
 <kw name="Take Screenshot" library="Browser" type="teardown">
 <tags>
 <tag>PageContent</tag>
 </tags>
 <doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
-<msg timestamp="20210216 17:50:40.112" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-13.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210216 17:50:39.702" endtime="20210216 17:50:40.112"></status>
+<msg timestamp="20210217 11:51:15.862" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-25.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210217 11:51:15.521" endtime="20210217 11:51:15.862"></status>
 </kw>
-<status status="PASS" starttime="20210216 17:50:31.801" endtime="20210216 17:50:40.113" critical="yes"></status>
+<status status="PASS" starttime="20210217 11:51:08.317" endtime="20210217 11:51:15.863" critical="yes"></status>
 </test>
 <doc>Testando o player de Reprodução</doc>
-<status status="PASS" starttime="20210216 17:50:30.462" endtime="20210216 17:50:40.206"></status>
+<status status="PASS" starttime="20210217 11:51:08.309" endtime="20210217 11:51:15.929"></status>
+</suite>
+<status status="PASS" starttime="20210217 11:50:43.230" endtime="20210217 11:51:15.936"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="6" fail="0">Critical Tests</stat>
+<stat pass="6" fail="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0">smoke</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Player">Player</stat>
+<stat pass="6" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="5" fail="0" id="s1-s1" name="Login">Tests.Login</stat>
+<stat pass="1" fail="0" id="s1-s2" name="Player">Tests.Player</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210216 17:50:31.809" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
 </errors>
 </robot>
